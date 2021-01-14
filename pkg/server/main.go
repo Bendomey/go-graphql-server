@@ -12,7 +12,7 @@ var host, port string
 
 func init() {
 	host = utils.MustGet("GQL_SERVER_HOST")
-	port = utils.MustGet("GQL_SERVER_PORT")
+	port = utils.MustGet("PORT")
 }
 
 // Run web server
