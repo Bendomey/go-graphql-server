@@ -11,7 +11,7 @@ import (
 var host, port string
 
 func init() {
-	host = utils.MustGet("GQL_SERVER_HOST")
+	host = utils.MustGet("HOST")
 	port = utils.MustGet("PORT")
 }
 
