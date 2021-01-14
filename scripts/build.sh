@@ -2,7 +2,7 @@
 srcPath="cmd"
 pkgFile="main.go"
 outputPath="build"
-app="Graphql Boilerplate"
+app="gql-server"
 output="$outputPath/$app"
 src="$srcPath/$app/$pkgFile"
 
