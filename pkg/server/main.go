@@ -8,9 +8,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var port string
+var host, port string
 
 func init() {
+	host = utils.MustGet("HOST")
 	port = utils.MustGet("PORT")
 }
 
@@ -19,7 +20,6 @@ func Run() {
 	r := gin.Default()
 	// Setup routes
 	r.GET("/ping", handlers.Ping())
-	// log.Println("Running @ http://" + host + ":" + port)
-	log.Println("Running on port: " + port)
-	log.Fatalln(r.Run())
+	log.Println("Running @ http://" + host + ":" + port)
+	log.Fatalln(r.Run(host + ":" + port))
 }
