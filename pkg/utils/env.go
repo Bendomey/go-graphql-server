@@ -4,6 +4,10 @@ import (
 	"log"
 	"os"
 	"strconv"
+
+	// For loading environemtn variabales
+	_ "github.com/heroku/x/hmetrics/onload"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 // MustGet will return the env or panic if it is not present
