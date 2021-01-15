@@ -20,7 +20,6 @@ model:
 # Where should the resolver implementations go?
 resolver:
   filename: internal/gql/resolvers/generated.go
-  type: Resolver
   package: resolvers
 
 # Optional: turn on use `gqlgen:"fieldName"` tags in your models

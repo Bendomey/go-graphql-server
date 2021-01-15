@@ -1,4 +1,3 @@
-
 #!/bin/bash
 printf "\nRegenerating gqlgen files\n"
 rm -f internal/gql/generated.go \
