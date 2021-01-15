@@ -5,6 +5,7 @@ import (
 
 	resolvers "github.com/Bendomey/graphql-boilerplate/internal/gql/resolvers"
 	"github.com/Bendomey/graphql-boilerplate/internal/handlers"
+	"github.com/Bendomey/graphql-boilerplate/internal/orm"
 	"github.com/Bendomey/graphql-boilerplate/pkg/utils"
 	"github.com/gin-gonic/gin"
 )
@@ -20,7 +21,7 @@ func init() {
 }
 
 // Run web server
-func Run() {
+func Run(orm *orm.ORM) {
 	r := gin.Default()
 	// Handlers
 	// Simple keep-alive/ping handler

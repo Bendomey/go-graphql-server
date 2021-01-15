@@ -3,10 +3,11 @@ package resolvers
 // THIS CODE IS A STARTING POINT ONLY. IT WILL NOT BE UPDATED WITH SCHEMA CHANGES.
 
 import (
-	"github.com/99designs/gqlgen/example/starwars/generated"
-	"github.com/99designs/gqlgen/graphql"
+	"context"
 
+	"github.com/99designs/gqlgen/graphql"
 	"github.com/Bendomey/graphql-boilerplate/internal/gql"
+	"github.com/Bendomey/graphql-boilerplate/internal/gql/models"
 )
 
 type Resolver struct{}
@@ -15,7 +16,24 @@ type Resolver struct{}
 func NewGraphqlServer() (*Resolver, error) {
 	// connect to user service
 	// userService := services.NewUserService(repo)
+
 	return &Resolver{}, nil
+}
+
+func (r *mutationResolver) CreateUser(ctx context.Context, input models.UserInput) (*models.User, error) {
+	panic("not implemented")
+}
+
+func (r *mutationResolver) UpdateUser(ctx context.Context, id string, input models.UserInput) (*models.User, error) {
+	panic("not implemented")
+}
+
+func (r *mutationResolver) DeleteUser(ctx context.Context, id string) (bool, error) {
+	panic("not implemented")
+}
+
+func (r *queryResolver) Users(ctx context.Context, id *string) (*models.Users, error) {
+	panic("not implemented")
 }
 
 // Mutation returns gql.MutationResolver implementation.
@@ -29,7 +47,7 @@ type queryResolver struct{ *Resolver }
 
 // ToExecutableSchema retrieves services here
 func (r *Resolver) ToExecutableSchema() graphql.ExecutableSchema {
-	return generated.NewExecutableSchema(generated.Config{
+	return gql.NewExecutableSchema(gql.Config{
 		Resolvers: nil,
 	})
 }
